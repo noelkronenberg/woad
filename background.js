@@ -192,7 +192,7 @@ chrome.action.onClicked.addListener(async (tab) => {
           document.body.appendChild(container);
         };
 
-        // Start the extension
+        // start the extension
         init();
       }
     });
