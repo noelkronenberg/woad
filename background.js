@@ -2,7 +2,6 @@ chrome.action.onClicked.addListener(async (tab) => {
     chrome.scripting.executeScript({
       target: { tabId: tab.id },
       func: () => {
-        
         // styles
         const styles = {
           nutritionLabel: `
@@ -85,6 +84,11 @@ chrome.action.onClicked.addListener(async (tab) => {
           document.head.appendChild(style);
         };
 
+        const removeExistingLabels = () => {
+          const existingLabels = document.querySelectorAll('.woad-nutrition-label');
+          existingLabels.forEach(label => label.remove());
+        };
+
         // task processing functions
         const parseTaskHours = (codeElement) => {
           if (!codeElement) return null;
@@ -164,6 +168,7 @@ chrome.action.onClicked.addListener(async (tab) => {
 
         // main initialization
         const init = () => {
+          removeExistingLabels();
           injectStyles();
 
           const container = createElement('div', 'woad-nutrition-label');
