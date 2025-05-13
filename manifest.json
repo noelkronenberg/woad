@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "name": "Todoist Workload",
+    "version": "1.0",
+    "action": {
+      "default_title": "Todoist Workload"
+    },
+    "permissions": ["scripting", "activeTab"],
+    "background": {
+      "service_worker": "background.js"
+    }
+}
