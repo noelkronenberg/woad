@@ -67,6 +67,9 @@ chrome.action.onClicked.addListener(async (tab) => {
               color: #666;
               font-style: italic;
             }
+            span.woad-task-name, .woad-header, .woad-total, .woad-close {
+                color: black;
+            }
           `
         };
 
